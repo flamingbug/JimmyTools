@@ -6,17 +6,17 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-basic": {
+    "jimmy-tools": {
       "projectType": "application",
       "schematics": {},
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app",
+      "prefix": "jt",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-basic",
+            "outputPath": "dist/jimmy-tools",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -59,18 +59,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-basic:build"
+            "browserTarget": "jimmy-tools:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-basic:build:production"
+              "browserTarget": "jimmy-tools:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-basic:build"
+            "browserTarget": "jimmy-tools:build"
           }
         },
         "test": {
@@ -100,16 +100,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular-basic:serve"
+            "devServerTarget": "jimmy-tools:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular-basic:serve:production"
+              "devServerTarget": "jimmy-tools:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "angular-basic"
+  "defaultProject": "jimmy-tools"
 }
