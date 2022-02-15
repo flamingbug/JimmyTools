@@ -1,3 +1,4 @@
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Component } from '@angular/core';
 
 @Component({
@@ -5,5 +6,15 @@ import { Component } from '@angular/core';
   template: `<div>Hello {{value}}</div>`,
 })
 export class AppComponent {
-  value = 'World';
+  value = '';
+
+  constructor(private http: HttpClient) {
+    const params = new HttpParams()
+      .set('name', 'Jimmy-Tools');
+
+    this.http.get('/api/test', { params })
+      .subscribe((resp: any) => this.value = resp.text);
+  }
 }
+
+
