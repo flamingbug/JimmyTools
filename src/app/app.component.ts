@@ -13,7 +13,10 @@ export class AppComponent {
       .set('name', 'Jimmy-Tools');
 
     this.http.get('/api/test', { params })
-      .subscribe((resp: any) => this.value = resp.text);
+      .subscribe((resp: any) => {
+        console.log(resp);
+        this.value = resp;
+      });
   }
 }
 
