@@ -3,10 +3,11 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  template: `<div>Hello {{value}}</div>`,
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  value = '';
+  title = '';
 
   constructor(private http: HttpClient) {
     const params = new HttpParams()
@@ -15,9 +16,7 @@ export class AppComponent {
     this.http.get('/api/test', { params })
       .subscribe((resp: any) => {
         console.log(resp);
-        this.value = resp;
+        this.title = resp;
       });
   }
 }
-
-
