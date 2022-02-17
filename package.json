@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "swa": "swa start dist/jimmy-tools --api-location api"
   },
   "private": true,
   "dependencies": {
